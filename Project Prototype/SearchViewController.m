@@ -7,8 +7,13 @@
 //
 
 #import "SearchViewController.h"
+#import "UnitViewCell.h"
 
-@interface SearchViewController ()
+@interface SearchViewController ()<UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong,nonatomic) NSArray *unitListings;
 
 @end
 
@@ -19,14 +24,18 @@
     // Do any additional setup after loading the view.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITableViewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.unitListings.count;
 }
-*/
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UnitViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"listingCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+
 
 @end

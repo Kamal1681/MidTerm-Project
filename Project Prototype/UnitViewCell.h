@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Unit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UnitViewCell : UITableViewCell
+@property (weak, nonatomic) Unit *unitListing;
 
 @end
 
