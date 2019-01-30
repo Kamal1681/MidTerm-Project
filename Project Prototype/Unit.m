@@ -9,16 +9,21 @@
 #import "Unit.h"
 
 @implementation Unit
-- (instancetype)initWithUnitDescription: (NSString *) unitDescription City: (NSString *) city NumberOfRooms: (NSUInteger) numberOfRooms Price: (NSNumber *) price andArea: (NSUInteger) area
-{
-    self = [super init];
-    if (self) {
-        _city = city;
-        _numberOfRooms = numberOfRooms;
-        _price = price;
-        _unitDescription = unitDescription;
-        _area = area;
-    }
-    return self;
++ (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary {
+    NSLog (@"%@", dictionary);
+    
+    Unit *unit = [[Unit alloc] init];
+    unit.city = dictionary[@"address"][@"city"];
+    unit.photos = dictionary[@"photos"];
+    unit.numberOfRooms = [dictionary[@"property"][@"bedrooms"]integerValue];
+    unit.price = dictionary[@"listPrice"];
+    unit.unitDescription = dictionary[@"remarks"];
+    unit.area = [dictionary[@"property"][@"area"]integerValue];
+    unit.latitude = dictionary[@"geo"][@"latitude"];
+    unit.longitude = dictionary[@"geo"][@"longitude"];
+    unit.address = dictionary[@"address"][@"full"];
+    
+    
+    return unit;
 }
 @end

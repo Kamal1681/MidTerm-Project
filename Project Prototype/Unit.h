@@ -11,13 +11,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Unit : NSObject
-@property (strong, nonatomic) NSString * city;
-@property (nonatomic) NSUInteger  numberOfRooms;
-@property (strong, nonatomic) NSNumber * price;
-@property (strong, nonatomic) NSString * unitDescription;
-@property (nonatomic) NSUInteger area;
+@property (strong, nonatomic) NSString * city;//address.city
+@property (strong, nonatomic) NSArray * photos;
+@property (nonatomic) NSUInteger  numberOfRooms; //property.bedrooms
+@property (strong, nonatomic) NSNumber * price;//listprice
+@property (strong, nonatomic) NSString * unitDescription; //remarks?
+@property (nonatomic) NSUInteger area; //property.area
+@property (strong, nonatomic) NSNumber * latitude; //geo.lat
+@property (strong, nonatomic) NSNumber * longitude; //geo.lng
+@property (strong, nonatomic) NSNumber * address; //address.full
 
-- (instancetype)initWithUnitDescription: (NSString *) unitDescription City: (NSString *) city NumberOfRooms: (NSUInteger) numberOfRooms Price: (NSNumber *) price andArea: (NSUInteger) area;
++ (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary;
 @end
 
 NS_ASSUME_NONNULL_END
