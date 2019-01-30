@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSUInteger  numberOfRooms;
 @property (strong, nonatomic) NSNumber * price;
 @property (strong, nonatomic) NSString * unitDescription;
-- (instancetype)initWithUnitDescription: (NSString *) unitDescription City: (NSString *) city NumberOfRooms: (NSUInteger) numberOfRooms andPrice: (NSNumber *) price;
+@property (nonatomic) NSUInteger area;
+
+- (instancetype)initWithUnitDescription: (NSString *) unitDescription City: (NSString *) city NumberOfRooms: (NSUInteger) numberOfRooms Price: (NSNumber *) price andArea: (NSUInteger) area;
 @end
 
 NS_ASSUME_NONNULL_END

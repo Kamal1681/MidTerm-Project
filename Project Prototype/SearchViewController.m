@@ -8,7 +8,7 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -28,5 +28,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    <#code#>
+//}
+//
+//- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    <#code#>
+//}
+
+
 
 @end
