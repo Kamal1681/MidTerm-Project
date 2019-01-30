@@ -17,6 +17,7 @@
 		1581B3552201308900A3BA1F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B3542201308900A3BA1F /* DetailViewController.m */; };
 		1581B3582201312D00A3BA1F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B3572201312D00A3BA1F /* SearchViewController.m */; };
 		1581B35B2201316000A3BA1F /* UnitViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B35A2201316000A3BA1F /* UnitViewCell.m */; };
+		CDD738372202580000BD157B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD738362202580000BD157B /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1581B3572201312D00A3BA1F /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		1581B3592201316000A3BA1F /* UnitViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitViewCell.h; sourceTree = "<group>"; };
 		1581B35A2201316000A3BA1F /* UnitViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitViewCell.m; sourceTree = "<group>"; };
+		CDD738362202580000BD157B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD738372202580000BD157B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +59,7 @@
 			children = (
 				1581B3392201195500A3BA1F /* Project Prototype */,
 				1581B3382201195500A3BA1F /* Products */,
+				CDD738352202580000BD157B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +95,14 @@
 			path = "Project Prototype";
 			sourceTree = "<group>";
 		};
+		CDD738352202580000BD157B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDD738362202580000BD157B /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +134,11 @@
 				TargetAttributes = {
 					1581B3362201195500A3BA1F = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
