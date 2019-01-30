@@ -13,6 +13,10 @@
 		1581B3442201195900A3BA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1581B3432201195900A3BA1F /* Assets.xcassets */; };
 		1581B3472201195900A3BA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1581B3452201195900A3BA1F /* LaunchScreen.storyboard */; };
 		1581B34A2201195900A3BA1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B3492201195900A3BA1F /* main.m */; };
+		1581B352220128CB00A3BA1F /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B351220128CB00A3BA1F /* Unit.m */; };
+		1581B3552201308900A3BA1F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B3542201308900A3BA1F /* DetailViewController.m */; };
+		1581B3582201312D00A3BA1F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B3572201312D00A3BA1F /* SearchViewController.m */; };
+		1581B35B2201316000A3BA1F /* UnitViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B35A2201316000A3BA1F /* UnitViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		1581B3462201195900A3BA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1581B3482201195900A3BA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1581B3492201195900A3BA1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1581B350220128CB00A3BA1F /* Unit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		1581B351220128CB00A3BA1F /* Unit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Unit.m; sourceTree = "<group>"; };
+		1581B3532201308900A3BA1F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1581B3542201308900A3BA1F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1581B3562201312D00A3BA1F /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		1581B3572201312D00A3BA1F /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		1581B3592201316000A3BA1F /* UnitViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitViewCell.h; sourceTree = "<group>"; };
+		1581B35A2201316000A3BA1F /* UnitViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +74,15 @@
 				1581B33B2201195500A3BA1F /* AppDelegate.m */,
 				1581B33D2201195500A3BA1F /* ViewController.h */,
 				1581B33E2201195500A3BA1F /* ViewController.m */,
+				1581B3532201308900A3BA1F /* DetailViewController.h */,
+				1581B3542201308900A3BA1F /* DetailViewController.m */,
 				1581B3402201195500A3BA1F /* Main.storyboard */,
+				1581B3592201316000A3BA1F /* UnitViewCell.h */,
+				1581B35A2201316000A3BA1F /* UnitViewCell.m */,
+				1581B3562201312D00A3BA1F /* SearchViewController.h */,
+				1581B3572201312D00A3BA1F /* SearchViewController.m */,
+				1581B350220128CB00A3BA1F /* Unit.h */,
+				1581B351220128CB00A3BA1F /* Unit.m */,
 				1581B3432201195900A3BA1F /* Assets.xcassets */,
 				1581B3452201195900A3BA1F /* LaunchScreen.storyboard */,
 				1581B3482201195900A3BA1F /* Info.plist */,
@@ -141,8 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1581B3552201308900A3BA1F /* DetailViewController.m in Sources */,
 				1581B33F2201195500A3BA1F /* ViewController.m in Sources */,
+				1581B35B2201316000A3BA1F /* UnitViewCell.m in Sources */,
+				1581B352220128CB00A3BA1F /* Unit.m in Sources */,
 				1581B34A2201195900A3BA1F /* main.m in Sources */,
+				1581B3582201312D00A3BA1F /* SearchViewController.m in Sources */,
 				1581B33C2201195500A3BA1F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
