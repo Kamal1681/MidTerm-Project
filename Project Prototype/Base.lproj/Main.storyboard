@@ -146,25 +146,59 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listingCell" rowHeight="139" id="XKh-3D-WWL" customClass="UnitViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKh-3D-WWL" id="Oe9-iv-sRf">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKh-3D-WWL" id="Oe9-iv-sRf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="138.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-9B-aVr">
-                                                    <rect key="frame" x="15" y="0.0" width="169" height="139"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-9B-aVr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="OO5-X5-oir"/>
+                                                        <constraint firstAttribute="height" constant="150" id="eJj-J9-xdc"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6L-79-Vut">
-                                                    <rect key="frame" x="192" y="30" width="168" height="76"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTR-Hj-MUj">
+                                                    <rect key="frame" x="155" y="11.5" width="48.5" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1 000 000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6L-79-Vut">
+                                                    <rect key="frame" x="155" y="39.5" width="111" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedrooms:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWN-4t-mpv">
+                                                    <rect key="frame" x="155" y="70" width="74.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vp3-cv-lWs" userLabel="NumberOfBedrooms">
+                                                    <rect key="frame" x="234.5" y="70" width="16" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="f6L-79-Vut" firstAttribute="leading" secondItem="Gxr-9B-aVr" secondAttribute="trailing" constant="5" id="9Dw-Ry-baR"/>
+                                                <constraint firstItem="jWN-4t-mpv" firstAttribute="top" secondItem="f6L-79-Vut" secondAttribute="bottom" constant="5" id="Go0-Gn-76T"/>
+                                                <constraint firstItem="FTR-Hj-MUj" firstAttribute="leading" secondItem="Gxr-9B-aVr" secondAttribute="trailing" constant="5" id="Pto-fU-LQT"/>
+                                                <constraint firstItem="jWN-4t-mpv" firstAttribute="leading" secondItem="Gxr-9B-aVr" secondAttribute="trailing" constant="5" id="QIW-H5-5N0"/>
+                                                <constraint firstItem="f6L-79-Vut" firstAttribute="top" secondItem="FTR-Hj-MUj" secondAttribute="bottom" constant="5" id="R6a-Xn-4QF"/>
+                                                <constraint firstItem="Gxr-9B-aVr" firstAttribute="top" secondItem="Oe9-iv-sRf" secondAttribute="top" id="Yui-o4-hvN"/>
+                                                <constraint firstItem="vp3-cv-lWs" firstAttribute="leading" secondItem="jWN-4t-mpv" secondAttribute="trailing" constant="5" id="esE-lz-mMt"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gxr-9B-aVr" secondAttribute="bottom" id="izh-Vs-PKt"/>
+                                                <constraint firstItem="Gxr-9B-aVr" firstAttribute="leading" secondItem="Oe9-iv-sRf" secondAttribute="leading" id="jCd-fg-J1g"/>
+                                                <constraint firstItem="vp3-cv-lWs" firstAttribute="top" secondItem="f6L-79-Vut" secondAttribute="bottom" constant="5" id="lkW-Bf-So5"/>
+                                                <constraint firstItem="FTR-Hj-MUj" firstAttribute="top" secondItem="Oe9-iv-sRf" secondAttribute="topMargin" id="vcY-pC-C2x"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="listingImageView" destination="Gxr-9B-aVr" id="RB5-4h-MUD"/>
+                                            <outlet property="listingNumberOfBedrooms" destination="vp3-cv-lWs" id="fL1-JV-9kf"/>
                                             <outlet property="listingPriceLabel" destination="f6L-79-Vut" id="qwt-A9-3Lw"/>
                                         </connections>
                                     </tableViewCell>
