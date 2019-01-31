@@ -8,6 +8,13 @@
 
 #import "UnitViewCell.h"
 
+@interface UnitViewCell()
+@property (weak, nonatomic) IBOutlet UIImageView *listingImageView;
+@property (weak, nonatomic) IBOutlet UILabel *listingPriceLabel;
+
+
+@end
+
 @implementation UnitViewCell
 
 - (void)awakeFromNib {

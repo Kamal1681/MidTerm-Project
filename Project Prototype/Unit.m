@@ -10,7 +10,7 @@
 
 @implementation Unit
 + (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary {
-    NSLog (@"%@", dictionary);
+    NSLog (@"%@", dictionary[@"address"][@"city"]);
     
     Unit *unit = [[Unit alloc] init];
     unit.city = dictionary[@"address"][@"city"];
