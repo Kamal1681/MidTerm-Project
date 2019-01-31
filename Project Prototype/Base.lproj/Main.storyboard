@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gLk-JR-VLO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gLk-JR-VLO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -200,6 +200,7 @@
                                             <outlet property="listingImageView" destination="Gxr-9B-aVr" id="RB5-4h-MUD"/>
                                             <outlet property="listingNumberOfBedrooms" destination="vp3-cv-lWs" id="fL1-JV-9kf"/>
                                             <outlet property="listingPriceLabel" destination="f6L-79-Vut" id="qwt-A9-3Lw"/>
+                                            <segue destination="eqF-xa-VGD" kind="presentation" id="ehf-6i-d1H"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -229,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sly-vI-hxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1977" y="134"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ImF-bQ-a9o">
@@ -279,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5s-7o-d7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2577" y="132"/>
+            <point key="canvasLocation" x="3169" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ncE-mg-10Z">
