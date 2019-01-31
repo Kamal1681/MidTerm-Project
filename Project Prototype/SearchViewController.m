@@ -48,6 +48,18 @@
     self.mapView.mapType = MKMapTypeStandard;
     
     [self.mapView registerClass:[MKMarkerAnnotationView class] forAnnotationViewWithReuseIdentifier:@"myAnnotation"];
+    //setting out current location
+    MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
+    
+    myAnnotation.coordinate = CLLocationCoordinate2DMake(30.185015, -95.550936);
+    
+    [myAnnotation setTitle:@"Your Current Location"];
+    [myAnnotation setSubtitle:@"Where we currently are"];
+    [self.mapView addAnnotation: myAnnotation];
+    CLLocationCoordinate2D zoomToLocation = CLLocationCoordinate2DMake(30.185015, -95.550936);
+    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMakeWithDistance(zoomToLocation, 500, 500);
+    [self.mapView setRegion:adjustedRegion];
+    
     
     
     //set up the unit annotations
@@ -55,6 +67,7 @@
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.myUnit.latitude.doubleValue, self.myUnit.longitude.doubleValue);
     UnitAnnotations *annotation = [[UnitAnnotations alloc]initWithCoordinate:coord andTitle:self.myUnit.address];
     [self.mapView addAnnotation:annotation];
+    [annotation setTitle:self.myUnit.address];
 
     
     
@@ -120,21 +133,95 @@
 
 
 
+
 #pragma mark - MKMapViewDelegate
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    if ([annotation isKindOfClass:UnitAnnotations.class]) {
-        MKMarkerAnnotationView *mark = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"myAnnotation" forAnnotation:annotation];
-        mark.tintColor = [UIColor blueColor];
-        mark.titleVisibility = MKFeatureVisibilityVisible;
-        mark.animatesWhenAdded = YES;
-        
-        return mark;
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    //    //////// PIN VIEW
+    
+    /*
+     MKPinAnnotationView *pinView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:@"myId"];
+     if (!pinView)
+     {
+     // If an existing pin view was not available, create one.
+     pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myId"];
+     pinView.canShowCallout = YES;
+     pinView.pinTintColor = [UIColor greenColor];
+     
+     UIButton* rightButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
+     pinView.rightCalloutAccessoryView = rightButton;
+     
+     // Add an image to the left callout.
+     UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lhlLogo.png"]];
+     pinView.leftCalloutAccessoryView = iconView;
+     
+     }
+     return pinView;
+     */
+    
+    
+    // OR
+    
+    // MK Annotation View
+    
+    MKAnnotationView *anyView;
+    if ([annotation isKindOfClass: [MKPointAnnotation class]])
+    {
+        //////// VIEW
+        anyView = [mapView dequeueReusableAnnotationViewWithIdentifier: @"pinId"];
+        if (!anyView)
+        {
+            // If an existing pin view was not available, create one.
+            anyView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"pinId"];
+            anyView.canShowCallout = YES;
+            anyView.image = [UIImage imageNamed:@"pin.png"];
+            anyView.calloutOffset = CGPointMake(0, -32);
+            UIButton* rightButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
+            
+            [rightButton addTarget:self
+                            action:@selector(myTempAction)
+                  forControlEvents:UIControlEventTouchUpInside];
+            
+            
+            anyView.rightCalloutAccessoryView = rightButton;
+            
+            // Add an image to the left callout.
+            UIImageView *iconView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"lhlLogo.png"]];
+            anyView.leftCalloutAccessoryView = iconView;
+        }
+        else
+        {
+            anyView.annotation = annotation;
+        }
     }
-    return nil;
+    return anyView;
 }
 
 
+-(void)myTempAction
+{
+    NSLog(@"This is taht");
+}
+
+
+
+    
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+//    if ([annotation isKindOfClass:UnitAnnotations.class]) {
+//        MKMarkerAnnotationView *mark = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"myAnnotation" forAnnotation:annotation];
+//        mark.tintColor = [UIColor blueColor];
+//        mark.titleVisibility = MKFeatureVisibilityVisible;
+//        mark.animatesWhenAdded = YES;
+//
+//        return mark;
+//    }
+//    return nil;
+//}
+//
+//
 
 #pragma mark - UITableViewDataSource
 
