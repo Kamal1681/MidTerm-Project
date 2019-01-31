@@ -48,8 +48,8 @@
     //Set Photos in cell
     self.listingImageView.image = unit.photo;
 
-    self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.listingPrice];
-    NSLog(@"Price is %@", unit.listingPrice);
+    self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.price];
+    NSLog(@"Price is %@", unit.price);
 
     
     // Set Price in cell and Create format for the price
