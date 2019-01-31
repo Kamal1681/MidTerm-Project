@@ -47,8 +47,8 @@
 //    self.showingInstructionsLabel.text = rep.showingInstructions;
 //    self.mlsStatusLabel.text = rep.mlsStatus;
     self.listingImageView.image = unit.photo;
-    self.listingPriceLabel.text = [NSString stringWithFormat:@"Prise is %@", unit.price];
-    NSLog(@"Prise is %@", unit.price);
+    self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.listingPrice];
+    NSLog(@"Price is %@", unit.listingPrice);
 }
 
 @end
