@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.citiesArray = @[@"Cypress", @"Houston", @"Katy", @"Oak Ridge",  @"The Woodlands", @"Tomball"];
+    self.citiesArray = @[@"All cities", @"Cypress", @"Houston", @"Katy", @"Oak Ridge",  @"The Woodlands", @"Tomball"];
     
     self.pricesArray = @[].mutableCopy;
     
@@ -48,9 +48,10 @@
     
     self.pickedCity = self.citiesArray[0];
     self.pickedMinPrice = self.pricesArray[0];
-    self.pickedMaxPrice = self.pricesArray[0];
+    self.pickedMaxPrice = self.pricesArray.lastObject;
     self.pickedrooms = self.roomsArray[0];
 
+    [self.maxPrice selectRow: (self.pricesArray.count - 1) inComponent:0 animated:YES];
 }
 
 
@@ -91,7 +92,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString: @"searchSegue"]) {
         SearchViewController *dvc = [segue destinationViewController];
-        dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&cities=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms, [self.pickedCity stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+        if ([self.pickedCity isEqualToString:self.citiesArray[0]]) {
+            dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms];
+        } else {
+            dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&cities=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms, [self.pickedCity stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+        }
     }
     
 }
