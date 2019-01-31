@@ -22,7 +22,7 @@
 
     self.cityLabel.text = self.unitObject.city;
     self.unitDescriptionLabel.text = self.unitObject.unitDescription;
-    self.listingPriceLabel.text = [NSString stringWithFormat:@"%@", self.unitObject.listingPrice];
+    self.listingPriceLabel.text = [NSString stringWithFormat:@"%@", self.unitObject.price];
     self.bedRoomsLabel.text = [NSString stringWithFormat:@"%lu", self.unitObject.numberOfRooms];
     self.areaLabel.text = [NSString stringWithFormat:@"%lu", self.unitObject.area];
     self.additionalFeaturesLabel.text = self.unitObject.additionalFeatures;
