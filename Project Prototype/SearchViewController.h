@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-@import MapKit;
 
 NS_ASSUME_NONNULL_BEGIN
 

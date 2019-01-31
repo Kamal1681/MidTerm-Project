@@ -8,13 +8,20 @@
 
 #import "SearchViewController.h"
 #import "UnitViewCell.h"
+#import <MapKit/MapKit.h>
+#import "UnitAnnotations.h"
+#import "Unit.h"
 
 
-@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource,CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) NSArray *unitArray;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLGeocoder *geocoder;
+@property (strong, nonatomic) Unit *myUnit;
 
 
 @end
@@ -23,10 +30,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.myUnit = [[Unit alloc ] init];
+
+    //Set up location manager
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    self.locationManager.distanceFilter = 20;
+    self.locationManager.delegate = self;
+    
+    [self.locationManager requestWhenInUseAuthorization];
+    
+    //setting up mapview
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    self.mapView.showsPointsOfInterest = YES;
+    self.mapView.mapType = MKMapTypeStandard;
+    
+    [self.mapView registerClass:[MKMarkerAnnotationView class] forAnnotationViewWithReuseIdentifier:@"myAnnotation"];
+    
+    
+    //set up the unit annotations
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.myUnit.latitude.doubleValue, self.myUnit.longitude.doubleValue);
+    UnitAnnotations *annotation = [[UnitAnnotations alloc]initWithCoordinate:coord andTitle:@"random spot"];
+    [self.mapView addAnnotation:annotation];
+    
+    
 }
 - (void)viewDidAppear:(BOOL)animated {
-    
+    //Parsing Json File
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"simplyrets", @"simplyrets"];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
@@ -71,6 +104,21 @@
     [task resume];
 }
 
+#pragma mark - MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:UnitAnnotations.class]) {
+        MKMarkerAnnotationView *mark = (MKMarkerAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"myAnnotation" forAnnotation:annotation];
+        mark.tintColor = [UIColor blueColor];
+        mark.titleVisibility = MKFeatureVisibilityVisible;
+        mark.animatesWhenAdded = YES;
+        
+        return mark;
+    }
+    return nil;
+}
+
+
 
 #pragma mark - UITableViewDataSource
 
@@ -81,7 +129,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UnitViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"listingCell" forIndexPath:indexPath];
     
+
     cell.unit = self.unitArray[indexPath.row];
+
     
     return cell;
 }
