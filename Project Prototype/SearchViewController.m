@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.myUnit = [[Unit alloc ] init];
+    self.myUnit = [[Unit alloc] init];
 
     //Set up location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -53,8 +53,10 @@
     //set up the unit annotations
     
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.myUnit.latitude.doubleValue, self.myUnit.longitude.doubleValue);
-    UnitAnnotations *annotation = [[UnitAnnotations alloc]initWithCoordinate:coord andTitle:@"random spot"];
+    UnitAnnotations *annotation = [[UnitAnnotations alloc]initWithCoordinate:coord andTitle:self.myUnit.address];
     [self.mapView addAnnotation:annotation];
+
+    
     
     
 }
@@ -96,6 +98,8 @@
                                         
                                         self.unitArray = units;
                                         
+                                        [self loadAnnotations];
+                                        
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                             [self.tableView reloadData];
                                         }];
@@ -103,6 +107,18 @@
     
     [task resume];
 }
+
+- (void)loadAnnotations {
+    for (Unit *unit in self.unitArray) {
+        // Create an annotation and add it to the map
+        [self.mapView addAnnotation:unit];
+        //make uit conform to mkanno prot/
+    }
+}
+
+
+
+
 
 #pragma mark - MKMapViewDelegate
 
@@ -135,6 +151,7 @@
     
     return cell;
 }
+
 
 
 

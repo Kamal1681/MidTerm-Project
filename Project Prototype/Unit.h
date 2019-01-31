@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Unit : NSObject
+@interface Unit : NSObject<MKAnnotation>
 @property (strong, nonatomic) NSString * city;//address.city
 @property (strong, nonatomic) NSArray * photos;
 @property (strong, nonatomic) UIImage * photo; // photo, that appears in the cell
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString * address; //address.full
 @property (strong, nonatomic) NSString * additionalFeatures; // additionalRooms
 @property (strong, nonatomic) NSString * exteriorFeatures; // exteriorFeatures
+
 
 + (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary;
 @end
