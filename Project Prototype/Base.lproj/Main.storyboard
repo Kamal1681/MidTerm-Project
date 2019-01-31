@@ -174,17 +174,14 @@
                                     <outlet property="delegate" destination="2Dk-Xu-al2" id="ntH-py-ogl"/>
                                 </connections>
                             </tableView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iPh-Eb-Sen">
-                                <rect key="frame" x="0.0" y="64" width="375" height="0.0"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jPO-oc-Sbk">
+                                <rect key="frame" x="0.0" y="64" width="387" height="253"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F9V-Xw-rG4" firstAttribute="leading" secondItem="I57-tQ-oX4" secondAttribute="leading" id="0M4-FK-nDq"/>
-                            <constraint firstItem="iPh-Eb-Sen" firstAttribute="leading" secondItem="I57-tQ-oX4" secondAttribute="leading" id="6d9-Pd-aK5"/>
-                            <constraint firstItem="I57-tQ-oX4" firstAttribute="trailing" secondItem="iPh-Eb-Sen" secondAttribute="trailing" id="NSN-JI-EsT"/>
-                            <constraint firstItem="iPh-Eb-Sen" firstAttribute="top" secondItem="I57-tQ-oX4" secondAttribute="top" id="hGX-ah-boj"/>
-                            <constraint firstItem="F9V-Xw-rG4" firstAttribute="top" secondItem="iPh-Eb-Sen" secondAttribute="bottom" constant="250" id="oYM-Dl-hOZ"/>
                             <constraint firstItem="F9V-Xw-rG4" firstAttribute="top" secondItem="I57-tQ-oX4" secondAttribute="top" constant="250" id="pU1-Yj-dNT"/>
                             <constraint firstItem="I57-tQ-oX4" firstAttribute="bottom" secondItem="F9V-Xw-rG4" secondAttribute="bottom" id="rKp-MS-FZA"/>
                             <constraint firstItem="I57-tQ-oX4" firstAttribute="trailing" secondItem="F9V-Xw-rG4" secondAttribute="trailing" id="tYU-sY-3Ja"/>
@@ -192,7 +189,7 @@
                         <viewLayoutGuide key="safeArea" id="I57-tQ-oX4"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="iPh-Eb-Sen" id="LDv-eh-I6H"/>
+                        <outlet property="mapView" destination="jPO-oc-Sbk" id="3mr-ib-KoB"/>
                         <outlet property="tableView" destination="F9V-Xw-rG4" id="0lJ-fW-8gf"/>
                     </connections>
                 </viewController>

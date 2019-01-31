@@ -18,6 +18,7 @@
 		1581B3582201312D00A3BA1F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B3572201312D00A3BA1F /* SearchViewController.m */; };
 		1581B35B2201316000A3BA1F /* UnitViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1581B35A2201316000A3BA1F /* UnitViewCell.m */; };
 		CDD738372202580000BD157B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD738362202580000BD157B /* MapKit.framework */; };
+		CDD7383A22035ED500BD157B /* UnitAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7383922035ED500BD157B /* UnitAnnotations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		1581B3592201316000A3BA1F /* UnitViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitViewCell.h; sourceTree = "<group>"; };
 		1581B35A2201316000A3BA1F /* UnitViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitViewCell.m; sourceTree = "<group>"; };
 		CDD738362202580000BD157B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CDD7383822035ED500BD157B /* UnitAnnotations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitAnnotations.h; sourceTree = "<group>"; };
+		CDD7383922035ED500BD157B /* UnitAnnotations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitAnnotations.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				1581B35A2201316000A3BA1F /* UnitViewCell.m */,
 				1581B3562201312D00A3BA1F /* SearchViewController.h */,
 				1581B3572201312D00A3BA1F /* SearchViewController.m */,
+				CDD7383822035ED500BD157B /* UnitAnnotations.h */,
+				CDD7383922035ED500BD157B /* UnitAnnotations.m */,
 				1581B350220128CB00A3BA1F /* Unit.h */,
 				1581B351220128CB00A3BA1F /* Unit.m */,
 				1581B3432201195900A3BA1F /* Assets.xcassets */,
@@ -180,6 +185,7 @@
 			files = (
 				1581B3552201308900A3BA1F /* DetailViewController.m in Sources */,
 				1581B33F2201195500A3BA1F /* ViewController.m in Sources */,
+				CDD7383A22035ED500BD157B /* UnitAnnotations.m in Sources */,
 				1581B35B2201316000A3BA1F /* UnitViewCell.m in Sources */,
 				1581B352220128CB00A3BA1F /* Unit.m in Sources */,
 				1581B34A2201195900A3BA1F /* main.m in Sources */,
