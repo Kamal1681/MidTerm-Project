@@ -81,6 +81,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UnitViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"listingCell" forIndexPath:indexPath];
     
+    cell.unit = self.unitArray[indexPath.row];
+    
     return cell;
 }
 

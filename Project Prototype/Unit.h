@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Unit : NSObject
 @property (strong, nonatomic) NSString * city;//address.city
 @property (strong, nonatomic) NSArray * photos;
+@property (strong, nonatomic) UIImage * photo; // photo, that appears in the cell
 @property (nonatomic) NSUInteger  numberOfRooms; //property.bedrooms
 @property (strong, nonatomic) NSNumber * price;//listprice
 @property (strong, nonatomic) NSString * unitDescription; //remarks?
