@@ -14,7 +14,7 @@
     
     Unit *unit = [[Unit alloc] init];
     unit.city = dictionary[@"address"][@"city"];
-    unit.photos = dictionary[@"photos"];
+//    unit.photos = dictionary[@"photos"];
     unit.numberOfRooms = [dictionary[@"property"][@"bedrooms"]integerValue];
     unit.price = dictionary[@"listPrice"];
     unit.unitDescription = dictionary[@"remarks"];
@@ -22,6 +22,28 @@
     unit.latitude = dictionary[@"geo"][@"latitude"];
     unit.longitude = dictionary[@"geo"][@"longitude"];
     unit.address = dictionary[@"address"][@"full"];
+    
+    
+    
+    NSURL *imageUrl = [NSURL URLWithString:dictionary[@"photos"][0]];
+    if ([NSURL URLWithString:dictionary[@"photos"][0]] == nil) {
+        NSLog(@"URL is nil");
+    }
+    else {
+        NSLog(@"Image %@", [NSURL URLWithString:dictionary[@"photos"][0]]);
+    }
+    //   Blocks processing on the thread this runs on (VERY SLOW)
+    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+    unit.photo = [UIImage imageWithData:imageData];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:imageUrl];
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        UIImage *image = [UIImage imageWithData:data];
+        
+        unit.photo = image;
+    }];
+    [task resume];
+
     
     
     return unit;

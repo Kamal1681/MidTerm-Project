@@ -20,12 +20,35 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-}
+    
+      [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"self.unit.photo"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"self.unit.photo"]) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.listingImageView.image = self.unit.photo;
+        }];
+    }
+}
+
+- (void)setUnit:(Unit *) unit {
+    _unit = unit;
+    
+//    self.showingInstructionsLabel.text = rep.showingInstructions;
+//    self.mlsStatusLabel.text = rep.mlsStatus;
+    self.listingImageView.image = unit.photo;
+    self.listingPriceLabel.text = [NSString stringWithFormat:@"Prise is %@", unit.price];
+    NSLog(@"Prise is %@", unit.price);
 }
 
 @end
