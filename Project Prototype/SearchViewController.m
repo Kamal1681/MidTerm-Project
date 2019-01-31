@@ -50,9 +50,7 @@
     [self.mapView registerClass:[MKMarkerAnnotationView class] forAnnotationViewWithReuseIdentifier:@"myAnnotation"];
     //setting out current location
     MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
-    
     myAnnotation.coordinate = CLLocationCoordinate2DMake(30.185015, -95.550936);
-    
     [myAnnotation setTitle:@"Your Current Location"];
     [myAnnotation setSubtitle:@"Where we currently are"];
     [self.mapView addAnnotation: myAnnotation];
@@ -66,8 +64,12 @@
     
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(self.myUnit.latitude.doubleValue, self.myUnit.longitude.doubleValue);
     UnitAnnotations *annotation = [[UnitAnnotations alloc]initWithCoordinate:coord andTitle:self.myUnit.address];
+    [annotation setTitle:@"my Title"];
     [self.mapView addAnnotation:annotation];
-    [annotation setTitle:self.myUnit.address];
+    
+    
+    
+    
 
     
     
@@ -140,41 +142,14 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    //    //////// PIN VIEW
     
-    /*
-     MKPinAnnotationView *pinView = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:@"myId"];
-     if (!pinView)
-     {
-     // If an existing pin view was not available, create one.
-     pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"myId"];
-     pinView.canShowCallout = YES;
-     pinView.pinTintColor = [UIColor greenColor];
-     
-     UIButton* rightButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
-     pinView.rightCalloutAccessoryView = rightButton;
-     
-     // Add an image to the left callout.
-     UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lhlLogo.png"]];
-     pinView.leftCalloutAccessoryView = iconView;
-     
-     }
-     return pinView;
-     */
-    
-    
-    // OR
-    
-    // MK Annotation View
-    
-    MKAnnotationView *anyView;
-    if ([annotation isKindOfClass: [MKPointAnnotation class]])
+    if ([annotation isKindOfClass: [Unit class]])
     {
+        MKAnnotationView *anyView;
         //////// VIEW
         anyView = [mapView dequeueReusableAnnotationViewWithIdentifier: @"pinId"];
         if (!anyView)
         {
-            // If an existing pin view was not available, create one.
             anyView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"pinId"];
             anyView.canShowCallout = YES;
             anyView.image = [UIImage imageNamed:@"pin.png"];
@@ -189,21 +164,23 @@
             anyView.rightCalloutAccessoryView = rightButton;
             
             // Add an image to the left callout.
-            UIImageView *iconView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"lhlLogo.png"]];
+            UIImageView *iconView = [[UIImageView alloc] initWithImage: self.myUnit.photo];
             anyView.leftCalloutAccessoryView = iconView;
         }
         else
         {
             anyView.annotation = annotation;
         }
+        return anyView;
     }
-    return anyView;
+    
+    return nil;
 }
 
 
 -(void)myTempAction
 {
-    NSLog(@"This is taht");
+    NSLog(@"Click for more details");
 }
 
 
