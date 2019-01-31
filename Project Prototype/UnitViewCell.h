@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UnitViewCell : UITableViewCell
 @property (weak, nonatomic) Unit *unitListing;
+@property(weak, nonatomic) Unit *unit;
 
 @end
 
