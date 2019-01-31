@@ -14,23 +14,25 @@
     
     Unit *unit = [[Unit alloc] init];
     unit.city = dictionary[@"address"][@"city"];
-//    unit.photos = dictionary[@"photos"];
+    unit.photos = dictionary[@"photos"];
     unit.numberOfRooms = [dictionary[@"property"][@"bedrooms"]integerValue];
-    unit.price = dictionary[@"listPrice"];
+    unit.listingPrice = dictionary[@"listPrice"];
     unit.unitDescription = dictionary[@"remarks"];
     unit.area = [dictionary[@"property"][@"area"]integerValue];
     unit.latitude = dictionary[@"geo"][@"lat"];
     unit.longitude = dictionary[@"geo"][@"lng"];
     unit.address = dictionary[@"address"][@"full"];
+    unit.additionalFeatures = dictionary[@"additinalRooms"];
+    unit.exteriorFeatures = dictionary[@"exteriorFeatures"];
     
     
     
     NSURL *imageUrl = [NSURL URLWithString:dictionary[@"photos"][0]];
-    if ([NSURL URLWithString:dictionary[@"photos"][0]] == nil) {
+    if (!imageUrl) {
         NSLog(@"URL is nil");
     }
     else {
-        NSLog(@"Image %@", [NSURL URLWithString:dictionary[@"photos"][0]]);
+        NSLog(@"Image %@", imageUrl);
     }
     //   Blocks processing on the thread this runs on (VERY SLOW)
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];

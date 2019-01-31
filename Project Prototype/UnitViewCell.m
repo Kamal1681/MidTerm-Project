@@ -47,6 +47,10 @@
     
     //Set Photos in cell
     self.listingImageView.image = unit.photo;
+
+    self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.listingPrice];
+    NSLog(@"Price is %@", unit.listingPrice);
+
     
     // Set Price in cell and Create format for the price
     NSNumberFormatter *indCurrencyFormatter = [[NSNumberFormatter alloc] init];
@@ -55,10 +59,11 @@
     NSString *formattedString =  [indCurrencyFormatter stringFromNumber: unit.price];
     formattedString = [formattedString substringToIndex:[formattedString length]-3]; // cut .00 from the string
     self.listingPriceLabel.text = [NSString stringWithFormat:@"%@", formattedString];
-    NSLog(@"Prise is %@", unit.price);
+    NSLog(@"Price is %@", unit.price);
     
     // Set number of bedrooms in cell
     self.listingNumberOfBedrooms.text = [NSString stringWithFormat:@"%lu", unit.numberOfRooms];
+
 }
 
 @end

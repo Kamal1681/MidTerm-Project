@@ -25,7 +25,7 @@
 @property NSString *pickedMaxPrice;
 @property NSString *pickedrooms;
 
-@property (strong, nonatomic) NSString * searchQuery;
+
 @end
 
 @implementation ViewController
@@ -91,6 +91,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString: @"searchSegue"]) {
+        
         SearchViewController *dvc = [segue destinationViewController];
         if ([self.pickedCity isEqualToString:self.citiesArray[0]]) {
             dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms];
