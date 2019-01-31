@@ -58,4 +58,8 @@
 - (NSString *)title {
     return self.address;
 }
+
+-(NSString*)subtitle {
+    return self.city;
+}
 @end

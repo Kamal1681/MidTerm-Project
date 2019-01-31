@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) NSArray *unitArray;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) Unit *myUnit;
 
 
@@ -31,8 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.myUnit = [[Unit alloc] init];
-
     //Set up location manager
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
