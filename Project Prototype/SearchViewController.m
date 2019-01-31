@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSString * searchQuery;
 @property (strong,nonatomic) NSArray *unitArray;
 
 
@@ -32,7 +31,9 @@
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
     
-    NSURL *url = [NSURL URLWithString:@"https://api.simplyrets.com/properties?limit=500&lastId=0"];
+    NSLog(@"%@", self.searchQuery);
+    
+    NSURL *url = [NSURL URLWithString:self.searchQuery];
     
     //Authorization with login and password
     

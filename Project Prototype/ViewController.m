@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Unit.h"
+#import "SearchViewController.h"
 
 @interface ViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIPickerView *city;
@@ -16,8 +17,13 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *rooms;
 
 @property NSArray *citiesArray;
-@property NSArray *pricesArray;
+@property NSMutableArray *pricesArray;
 @property NSArray *roomsArray;
+
+@property NSString *pickedCity;
+@property NSString *pickedMinPrice;
+@property NSString *pickedMaxPrice;
+@property NSString *pickedrooms;
 
 @property (strong, nonatomic) NSString * searchQuery;
 @end
@@ -29,8 +35,22 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.citiesArray = @[@"Cypress", @"Houston", @"Katy", @"Oak Ridge",  @"The Woodlands", @"Tomball"];
-    self.pricesArray = @[@"100000", @"150000", @"200000", @"250000", @"300000", @"350000", @"400000", @"450000", @"500000", @"550000", @"600000", @"650000", @"700000", @"750000", @"800000", @"850000", @"900000", @"950000", @"1000000", @"1500000"];
+    
+    self.pricesArray = @[].mutableCopy;
+    
+    for (int i = 1; i < 50; i++) {
+        int price = i * 100000;
+        NSString *strPrice = [NSString stringWithFormat:@"%d", price];
+        [self.pricesArray addObject:strPrice];
+    }
+
     self.roomsArray = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10"];
+    
+    self.pickedCity = self.citiesArray[0];
+    self.pickedMinPrice = self.pricesArray[0];
+    self.pickedMaxPrice = self.pricesArray[0];
+    self.pickedrooms = self.roomsArray[0];
+
 }
 
 
@@ -68,5 +88,30 @@
 
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"searchSegue"]) {
+        SearchViewController *dvc = [segue destinationViewController];
+        dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&cities=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms, [self.pickedCity stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
+    }
+    
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    if (pickerView == self.city) {
+        self.pickedCity = self.citiesArray[row];
+    }
+    else if (pickerView == self.minPrice) {
+        self.pickedMinPrice = self.pricesArray[row];
+    }
+    else if (pickerView == self.maxPrice) {
+        self.pickedMaxPrice = self.pricesArray[row];
+    }
+    else if (pickerView == self.rooms) {
+        self.pickedrooms = self.roomsArray[row];
+    }
+    NSLog(@"Picked %@, %@, %@, %@", self.pickedCity, self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms);
+    
+}
 
 @end
