@@ -8,6 +8,11 @@
 
 #import "Unit.h"
 
+@interface Unit ()
+@property (nonatomic,strong) NSURL *imageUrl;
+@property (strong, nonatomic) UIImage * photo; // photo, that appears in the cell
+@end
+
 @implementation Unit
 + (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary {
     NSLog (@"%@", dictionary[@"address"][@"city"]);
@@ -27,28 +32,35 @@
     
     
     
-    NSURL *imageUrl = [NSURL URLWithString:dictionary[@"photos"][0]];
-    if (!imageUrl) {
-        NSLog(@"URL is nil");
-    }
-    else {
-        NSLog(@"Image %@", imageUrl);
-    }
-    //   Blocks processing on the thread this runs on (VERY SLOW)
-    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-    unit.photo = [UIImage imageWithData:imageData];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:imageUrl];
-    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        UIImage *image = [UIImage imageWithData:data];
-        
-        unit.photo = image;
-    }];
-    [task resume];
-
-    
+    unit.imageUrl = [NSURL URLWithString:dictionary[@"photos"][0]];
+//    if (!imageUrl) {
+//        NSLog(@"URL is nil");
+//    }
+//    else {
+//        NSLog(@"Image %@", imageUrl);
+//    }
+//    //   Blocks processing on the thread this runs on (VERY SLOW)
+//    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+//    unit.photo = [UIImage imageWithData:imageData];
     
     return unit;
+}
+
+- (void)loadImage:(void (^)(UIImage*))complete {
+    if (self.photo) {
+        complete(self.photo);
+    } else {
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.imageUrl];
+        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            UIImage *image = [UIImage imageWithData:data];
+            
+            self.photo = image;
+            [NSOperationQueue.mainQueue addOperationWithBlock:^{
+                complete(self.photo);
+            }];
+        }];
+        [task resume];
+    }
 }
 
 - (CLLocationCoordinate2D) coordinate {

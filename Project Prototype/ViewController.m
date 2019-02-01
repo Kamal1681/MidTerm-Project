@@ -98,6 +98,8 @@
         } else {
             dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&cities=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms, [self.pickedCity stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
         }
+        
+        dvc.searchIndex = 0;
     }
     
 }

@@ -22,7 +22,9 @@
     [super awakeFromNib];
     // Initialization code
     
-    [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];}
+//    [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -31,22 +33,27 @@
 }
 
 - (void)dealloc {
-    [self removeObserver:self forKeyPath:@"self.unit.photo"];
+//    [self removeObserver:self forKeyPath:@"self.unit.photo"];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"self.unit.photo"]) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.listingImageView.image = self.unit.photo;
-        }];
-    }
-}
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+//    if ([keyPath isEqualToString:@"self.unit.photo"]) {
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            self.listingImageView.image = self.unit.photo;
+//        }];
+//    }
+//}
 
 - (void)setUnit:(Unit *) unit {
     _unit = unit;
     
     //Set Photos in cell
-    self.listingImageView.image = unit.photo;
+    [unit loadImage:^(UIImage * photo) {
+        if (self.unit == unit) {
+            self.listingImageView.image = photo;
+        }
+    }];
+//    self.listingImageView.image = unit.photo;
     
 
     self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.price];
