@@ -20,7 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong,nonatomic) NSArray *unitArray;
+@property (strong,nonatomic) NSMutableArray *unitArray;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) Unit *myUnit;
 
@@ -68,8 +68,7 @@
     
     
     
-    
-
+    self.unitArray = [[NSMutableArray alloc] init];
     
     
     
@@ -104,18 +103,20 @@
                                         
                                         
                                         
-                                        NSMutableArray * units = [NSMutableArray new];
+//                                        NSMutableArray * units = [NSMutableArray new];
+                                        [self.unitArray removeAllObjects];
                                         for (NSMutableDictionary * unitDictionary in json) {
                                             Unit * unitSample = [Unit fromJsonDictionary:unitDictionary];
-                                            [units addObject:unitSample];
+                                            [self.unitArray addObject:unitSample];
                                         }
                                         
-                                        self.unitArray = units;
+//                                        self.unitArray = units;
                                         
                                         [self loadAnnotations];
                                         
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                             [self.tableView reloadData];
+                                            [[NSNotificationCenter defaultCenter] postNotificationName:@"finishedImageDownload" object:nil];
 //                                            InstaViewController *dvc = [[InstaViewController alloc] init];
 //                                            dvc.unitArray = self.unitArray;
                                         }];
