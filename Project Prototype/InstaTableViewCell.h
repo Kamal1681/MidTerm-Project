@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Unit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface InstaTableViewCell : UITableViewCell
+
+@property(weak, nonatomic) Unit *unit;
 
 @end
 

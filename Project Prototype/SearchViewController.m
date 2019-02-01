@@ -12,6 +12,7 @@
 #import "UnitAnnotations.h"
 #import "Unit.h"
 #import "DetailViewController.h"
+#import "InstaViewController.h"
 
 
 
@@ -115,6 +116,8 @@
                                         
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                             [self.tableView reloadData];
+//                                            InstaViewController *dvc = [[InstaViewController alloc] init];
+//                                            dvc.unitArray = self.unitArray;
                                         }];
                                     }];
     
@@ -212,12 +215,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UnitViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"listingCell" forIndexPath:indexPath];
-    
-
     cell.unit = self.unitArray[indexPath.row];
-
     
     return cell;
+
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -227,6 +228,10 @@
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
         Unit * unit = self.unitArray[indexPath.row];
         detailView.unitObject = unit;
+    }
+    else if ([segue.identifier isEqualToString:@"instaViewSegue"]) {
+        InstaViewController *dvc = segue.destinationViewController;
+        dvc.unitArray = self.unitArray;
     }
 }
 
