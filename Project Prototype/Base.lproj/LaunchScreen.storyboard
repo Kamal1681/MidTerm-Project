@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coffee-home" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDX-CB-gAW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJp-Dg-LbA">
+                                <rect key="frame" x="0.0" y="652" width="375" height="13"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="10.5"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insta    omey" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXs-2y-QhO">
+                                <rect key="frame" x="0.0" y="70" width="375" height="48"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Italic" family="Euphemia UCAS" pointSize="35"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInstaHomey" translatesAutoresizingMaskIntoConstraints="NO" id="9Xh-DQ-amY">
+                                <rect key="frame" x="150" y="42" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1FQ-vf-sOs"/>
+                                    <constraint firstAttribute="height" constant="70" id="o0h-ZA-IJL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Xh-DQ-amY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="93c-8m-haO"/>
+                            <constraint firstItem="dXs-2y-QhO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="KRi-ci-qDk"/>
+                            <constraint firstItem="FJp-Dg-LbA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NDN-N6-MSg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DDX-CB-gAW" secondAttribute="bottom" id="Xb2-Iz-FCK"/>
+                            <constraint firstItem="dXs-2y-QhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bNh-p3-yQz"/>
+                            <constraint firstItem="9Xh-DQ-amY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="cuB-5G-Tkf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DDX-CB-gAW" secondAttribute="trailing" id="gKw-0g-F36"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Xh-DQ-amY" secondAttribute="trailing" constant="155" id="jNc-mm-IjD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FJp-Dg-LbA" secondAttribute="trailing" id="kmi-ng-fAF"/>
+                            <constraint firstItem="DDX-CB-gAW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nga-td-oxj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FJp-Dg-LbA" secondAttribute="bottom" constant="2" id="rdI-Cd-rV0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dXs-2y-QhO" secondAttribute="trailing" id="uQO-lw-2ua"/>
+                            <constraint firstItem="DDX-CB-gAW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ys4-gm-qaD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Coffee-home" width="960" height="640"/>
+        <image name="iconInstaHomey" width="75" height="75"/>
+    </resources>
 </document>
