@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
         </scene>
-        <!--Title-->
+        <!--Map view-->
         <scene sceneID="CJj-ux-drK">
             <objects>
                 <viewController id="2Dk-Xu-al2" customClass="SearchViewController" sceneMemberID="viewController">
@@ -223,10 +223,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I57-tQ-oX4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="c92-in-ZAe">
+                    <navigationItem key="navigationItem" title="Map view" id="c92-in-ZAe">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="kxk-Vw-SMX">
                             <connections>
-                                <segue destination="Lun-ft-h1e" kind="show" id="737-Q4-98E"/>
+                                <segue destination="Lun-ft-h1e" kind="show" identifier="instaViewSegue" id="737-Q4-98E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -239,7 +239,7 @@
             </objects>
             <point key="canvasLocation" x="1977" y="134"/>
         </scene>
-        <!--Title-->
+        <!--Insta view-->
         <scene sceneID="TEZ-5S-sMR">
             <objects>
                 <viewController id="Lun-ft-h1e" customClass="InstaViewController" sceneMemberID="viewController">
@@ -287,6 +287,7 @@
                                         <connections>
                                             <outlet property="photo" destination="jlY-w7-boH" id="g0E-Zz-xKp"/>
                                             <outlet property="priceLabel" destination="ACq-uI-2X2" id="enN-6e-bSA"/>
+                                            <segue destination="eqF-xa-VGD" kind="show" id="EIl-xg-eM5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -305,7 +306,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="an1-Sh-G2z"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="fEg-8J-KIR"/>
+                    <navigationItem key="navigationItem" title="Insta view" id="fEg-8J-KIR"/>
                     <connections>
                         <outlet property="instaTableView" destination="yDD-nY-ahk" id="idX-WX-on3"/>
                     </connections>
@@ -414,4 +415,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EIl-xg-eM5"/>
+    </inferredMetricsTieBreakers>
 </document>
