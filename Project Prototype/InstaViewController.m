@@ -8,6 +8,7 @@
 
 #import "InstaViewController.h"
 #import "InstaTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface InstaViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *instaTableView;
@@ -44,6 +45,19 @@
 }
     
 
+#pragma mark - Navigation
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"Detail View"]) {
+        
+        DetailViewController * detailView = segue.destinationViewController;
+        NSIndexPath * indexPath = [self.instaTableView indexPathForSelectedRow];
+        Unit * unit = self.unitArray[indexPath.row];
+        detailView.unitObject = unit;
+    }
+    
+}
 
 /*
 #pragma mark - Navigation
@@ -54,5 +68,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
