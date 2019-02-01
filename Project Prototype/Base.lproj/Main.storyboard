@@ -344,7 +344,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6Q-ya-x7n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6Q-ya-x7n">
                                 <rect key="frame" x="16" y="157" width="343" height="353"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -360,7 +360,7 @@
                                     <constraint firstAttribute="width" constant="92" id="zfN-Bb-4RA"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="pageChanged:" destination="eqF-xa-VGD" eventType="valueChanged" id="z00-rp-YBd"/>
+                                    <action selector="pageChanged:" destination="eqF-xa-VGD" eventType="valueChanged" id="21h-vc-Nvu"/>
                                 </connections>
                             </pageControl>
                         </subviews>
