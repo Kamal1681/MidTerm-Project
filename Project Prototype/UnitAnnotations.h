@@ -2,8 +2,8 @@
 //  UnitAnnotations.h
 //  Project Prototype
 //
-//  Created by Van Luu on 2019-01-31.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,8 +2,8 @@
 //  SearchViewController.m
 //  Project Prototype
 //
-//  Created by Kamal Maged on 2019-01-29.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import "SearchViewController.h"
@@ -133,6 +133,8 @@
 
 
 
+
+
 #pragma mark - MKMapViewDelegate
 
 
@@ -151,18 +153,22 @@
             anyView.canShowCallout = YES;
             anyView.image = [UIImage imageNamed:@"pin.png"];
             anyView.calloutOffset = CGPointMake(0, -32);
-            UIButton* rightButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
+//            UIButton* rightButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
             
-            [rightButton addTarget:self
-                            action:@selector(myTempAction)
-                  forControlEvents:UIControlEventTouchUpInside];
+//            [rightButton addTarget:self
+//                            action:@selector(myTempAction)
+//                  forControlEvents:UIControlEventTouchUpInside];
+//
+//
+//            anyView.rightCalloutAccessoryView = rightButton;
             
-            
-            anyView.rightCalloutAccessoryView = rightButton;
-            
+//            anyView.leftCalloutAccessoryView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+//            [(UIImageView*)anyView.leftCalloutAccessoryView setImage:self.myUnit.photo];
+//
             // Add an image to the left callout.
-            UIImageView *iconView = [[UIImageView alloc] initWithImage: self.myUnit.photo];
-            anyView.leftCalloutAccessoryView = iconView;
+//            UIImageView *iconView = [[UIImageView alloc] initWithImage:self.myUnit.photo];
+//            [iconView setFrame:CGRectMake(0, 0, 0, 0)];
+//            anyView.leftCalloutAccessoryView = iconView;
         }
         else
         {
@@ -175,10 +181,10 @@
 }
 
 
--(void)myTempAction
-{
-    NSLog(@"Click for more details");
-}
+//-(void)myTempAction
+//{
+//    NSLog(@"View more details by selecting this house below");
+//}
 
 
 

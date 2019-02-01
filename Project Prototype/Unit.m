@@ -2,8 +2,8 @@
 //  Unit.m
 //  Project Prototype
 //
-//  Created by Kamal Maged on 2019-01-29.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import "Unit.h"
@@ -62,4 +62,5 @@
 -(NSString*)subtitle {
     return self.city;
 }
+
 @end
