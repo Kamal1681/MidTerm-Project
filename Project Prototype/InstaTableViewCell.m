@@ -22,7 +22,7 @@
     // Initialization code
 
     
-    [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+//    [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
 
 }
 
@@ -34,22 +34,27 @@
 
 
 - (void)dealloc {
-    [self removeObserver:self forKeyPath:@"self.unit.photo"];
+//    [self removeObserver:self forKeyPath:@"self.unit.photo"];
 }
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"self.unit.photo"]) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.photo.image = self.unit.photo;
-        }];
-    }
-}
+//
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+//    if ([keyPath isEqualToString:@"self.unit.photo"]) {
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            self.photo.image = self.unit.photo;
+//        }];
+//    }
+//}
 
 - (void)setUnit:(Unit *) unit {
     _unit = unit;
     
     //Set Photos in cell
-    self.photo.image = unit.photo;
+//    self.photo.image = unit.photo;
+    [unit loadImage:^(UIImage * _Nonnull photo) {
+        if (self.unit == unit) {
+            self.photo.image = photo;
+        }
+    }];
     
     
     self.priceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.price];
