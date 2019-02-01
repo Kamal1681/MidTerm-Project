@@ -20,8 +20,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+
     
     [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,6 +31,7 @@
 
     // Configure the view for the selected state
 }
+
 
 - (void)dealloc {
     [self removeObserver:self forKeyPath:@"self.unit.photo"];
