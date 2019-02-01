@@ -21,9 +21,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-  
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishedLoadingImages) name:@"finishedImageDownload" object:nil];
     
 }
+
+- (void)finishedLoadingImages {
+    [NSOperationQueue.mainQueue addOperationWithBlock:^{
+        [self.instaTableView reloadData];
+    }];
+}
+
 
 #pragma mark - UITableViewDataSource
 
