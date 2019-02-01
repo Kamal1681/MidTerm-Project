@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) Unit * unitObject;
 @property (strong, nonatomic) NSMutableArray <NSURL *> * imageUrlArray;
 @property (strong, nonatomic) NSMutableArray <UIImage *> * photosArray;
+@property (strong, nonatomic) NSMutableArray <UIImageView *> * imageViewArray;
 
 @end
 

@@ -16,7 +16,7 @@
     unit.city = dictionary[@"address"][@"city"];
     unit.photos = dictionary[@"photos"];
     unit.numberOfRooms = [dictionary[@"property"][@"bedrooms"]integerValue];
-    unit.listingPrice = dictionary[@"listPrice"];
+    unit.price = dictionary[@"listPrice"];
     unit.unitDescription = dictionary[@"remarks"];
     unit.area = [dictionary[@"property"][@"area"]integerValue];
     unit.latitude = dictionary[@"geo"][@"latitude"];
