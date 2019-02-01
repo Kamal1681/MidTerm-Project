@@ -27,12 +27,13 @@
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.unitArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     InstaTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"instaTableViewCell" forIndexPath:indexPath];
+    cell.unit = self.unitArray[indexPath.row];
     
     return cell;
     
