@@ -246,14 +246,73 @@
                     <view key="view" contentMode="scaleToFill" id="YoA-2W-CZK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yDD-nY-ahk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instaTableViewCell" rowHeight="330" id="t5q-0i-w9c" customClass="InstaTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="330"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5q-0i-w9c" id="36r-Gt-ElY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="329.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jlY-w7-boH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="250" id="ZzH-ly-Bta"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1 000 000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACq-uI-2X2">
+                                                    <rect key="frame" x="15" y="255" width="345" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="LaE-RE-FH8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ACq-uI-2X2" firstAttribute="leading" secondItem="36r-Gt-ElY" secondAttribute="leadingMargin" id="DUu-hl-acb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ACq-uI-2X2" secondAttribute="trailing" id="Fch-kU-rsB"/>
+                                                <constraint firstAttribute="trailing" secondItem="jlY-w7-boH" secondAttribute="trailing" id="GtL-zu-VUh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ACq-uI-2X2" secondAttribute="bottom" constant="5" id="UqF-cf-VIG"/>
+                                                <constraint firstItem="jlY-w7-boH" firstAttribute="top" secondItem="36r-Gt-ElY" secondAttribute="top" id="kUw-P7-bej"/>
+                                                <constraint firstItem="jlY-w7-boH" firstAttribute="leading" secondItem="36r-Gt-ElY" secondAttribute="leading" id="lYm-k7-aTK"/>
+                                                <constraint firstItem="ACq-uI-2X2" firstAttribute="top" secondItem="jlY-w7-boH" secondAttribute="bottom" constant="5" id="pJb-ae-aO9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="photo" destination="jlY-w7-boH" id="g0E-Zz-xKp"/>
+                                            <outlet property="priceLabel" destination="ACq-uI-2X2" id="enN-6e-bSA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lun-ft-h1e" id="pSL-Fz-fGi"/>
+                                    <outlet property="delegate" destination="Lun-ft-h1e" id="NbS-TY-nVG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="an1-Sh-G2z" firstAttribute="trailing" secondItem="yDD-nY-ahk" secondAttribute="trailing" id="M5D-4O-u2m"/>
+                            <constraint firstItem="yDD-nY-ahk" firstAttribute="leading" secondItem="an1-Sh-G2z" secondAttribute="leading" id="PGI-yx-Ng9"/>
+                            <constraint firstItem="an1-Sh-G2z" firstAttribute="bottom" secondItem="yDD-nY-ahk" secondAttribute="bottom" id="bCV-L3-mcO"/>
+                            <constraint firstItem="yDD-nY-ahk" firstAttribute="top" secondItem="an1-Sh-G2z" secondAttribute="top" id="s4O-Lv-Tzy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="an1-Sh-G2z"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fEg-8J-KIR"/>
+                    <connections>
+                        <outlet property="instaTableView" destination="yDD-nY-ahk" id="idX-WX-on3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmg-pb-gc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="841"/>
+            <point key="canvasLocation" x="1976.8" y="840.62968515742136"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ImF-bQ-a9o">

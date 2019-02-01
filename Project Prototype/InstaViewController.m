@@ -7,8 +7,10 @@
 //
 
 #import "InstaViewController.h"
+#import "InstaTableViewCell.h"
 
-@interface InstaViewController ()
+@interface InstaViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *instaTableView;
 
 @end
 
@@ -21,6 +23,22 @@
   
     
 }
+
+#pragma mark - UITableViewDataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    InstaTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"instaTableViewCell" forIndexPath:indexPath];
+    
+    return cell;
+    
+}
+    
+
 
 /*
 #pragma mark - Navigation

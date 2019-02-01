@@ -20,6 +20,7 @@
 		CDD738372202580000BD157B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD738362202580000BD157B /* MapKit.framework */; };
 		CDD7383A22035ED500BD157B /* UnitAnnotations.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD7383922035ED500BD157B /* UnitAnnotations.m */; };
 		E9C693392203E45D0038E32E /* InstaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C693382203E45D0038E32E /* InstaViewController.m */; };
+		E9C6933C2203EC260038E32E /* InstaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C6933B2203EC260038E32E /* InstaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		CDD7383922035ED500BD157B /* UnitAnnotations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitAnnotations.m; sourceTree = "<group>"; };
 		E9C693372203E45D0038E32E /* InstaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstaViewController.h; sourceTree = "<group>"; };
 		E9C693382203E45D0038E32E /* InstaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaViewController.m; sourceTree = "<group>"; };
+		E9C6933A2203EC260038E32E /* InstaTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstaTableViewCell.h; sourceTree = "<group>"; };
+		E9C6933B2203EC260038E32E /* InstaTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				1581B3402201195500A3BA1F /* Main.storyboard */,
 				E9C693372203E45D0038E32E /* InstaViewController.h */,
 				E9C693382203E45D0038E32E /* InstaViewController.m */,
+				E9C6933A2203EC260038E32E /* InstaTableViewCell.h */,
+				E9C6933B2203EC260038E32E /* InstaTableViewCell.m */,
 				1581B3592201316000A3BA1F /* UnitViewCell.h */,
 				1581B35A2201316000A3BA1F /* UnitViewCell.m */,
 				1581B3562201312D00A3BA1F /* SearchViewController.h */,
@@ -189,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1581B3552201308900A3BA1F /* DetailViewController.m in Sources */,
+				E9C6933C2203EC260038E32E /* InstaTableViewCell.m in Sources */,
 				E9C693392203E45D0038E32E /* InstaViewController.m in Sources */,
 				1581B33F2201195500A3BA1F /* ViewController.m in Sources */,
 				CDD7383A22035ED500BD157B /* UnitAnnotations.m in Sources */,
