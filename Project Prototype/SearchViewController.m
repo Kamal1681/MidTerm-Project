@@ -11,6 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "UnitAnnotations.h"
 #import "Unit.h"
+#import "DetailViewController.h"
 
 
 
@@ -219,7 +220,15 @@
     return cell;
 }
 
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"Detail View"]) {
+        
+        DetailViewController * detailView = segue.destinationViewController;
+        NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+        Unit * unit = self.unitArray[indexPath.row];
+        detailView.unitObject = unit;
+    }
+}
 
 
 //- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

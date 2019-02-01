@@ -200,7 +200,7 @@
                                             <outlet property="listingImageView" destination="Gxr-9B-aVr" id="RB5-4h-MUD"/>
                                             <outlet property="listingNumberOfBedrooms" destination="vp3-cv-lWs" id="fL1-JV-9kf"/>
                                             <outlet property="listingPriceLabel" destination="f6L-79-Vut" id="qwt-A9-3Lw"/>
-                                            <segue destination="eqF-xa-VGD" kind="presentation" id="ehf-6i-d1H"/>
+                                            <segue destination="eqF-xa-VGD" kind="show" identifier="Detail View" id="InD-ke-D6d"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -240,47 +240,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Pf-ij3">
+                                <rect key="frame" x="69" y="442" width="221" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="f6p-px-FZg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwY-TL-muX">
+                                <rect key="frame" x="93" y="531" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number Of Rooms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9k-id-GX6">
+                                <rect key="frame" x="69" y="583" width="221" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6Q-ya-x7n">
-                                <rect key="frame" x="67" y="73" width="241" height="128"/>
+                                <rect key="frame" x="16" y="157" width="343" height="353"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Pf-ij3">
-                                <rect key="frame" x="138.5" y="254" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwY-TL-muX">
-                                <rect key="frame" x="163" y="323" width="39" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-h3-jQi">
-                                <rect key="frame" x="163" y="209" width="39" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number Of Rooms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9k-id-GX6">
-                                <rect key="frame" x="116.5" y="386" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="j8s-kY-nhe">
-                                <rect key="frame" x="163" y="164" width="39" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-eD-t5N">
+                                <rect key="frame" x="16" y="73" width="343" height="353"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqF-xa-VGD" id="Uam-If-K4s"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-h3-jQi">
+                                <rect key="frame" x="141.5" y="395" width="92" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="zfN-Bb-4RA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pageChanged:" destination="eqF-xa-VGD" eventType="valueChanged" id="z00-rp-YBd"/>
+                                </connections>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U8w-Pf-ij3" firstAttribute="leading" secondItem="VVU-yy-Hai" secondAttribute="leading" constant="69" id="3UT-LQ-SfQ"/>
+                            <constraint firstItem="SRP-eD-t5N" firstAttribute="leading" secondItem="C0k-0p-Jn4" secondAttribute="leadingMargin" id="3tU-6z-bgK"/>
+                            <constraint firstItem="SRP-eD-t5N" firstAttribute="trailing" secondItem="C0k-0p-Jn4" secondAttribute="trailingMargin" id="4Sj-bQ-nty"/>
+                            <constraint firstItem="VVU-yy-Hai" firstAttribute="trailing" secondItem="U8w-Pf-ij3" secondAttribute="trailing" constant="85" id="5re-L4-dNX"/>
+                            <constraint firstItem="qwY-TL-muX" firstAttribute="top" secondItem="U8w-Pf-ij3" secondAttribute="bottom" constant="8" symbolic="YES" id="65w-3i-taC"/>
+                            <constraint firstItem="qwY-TL-muX" firstAttribute="leading" secondItem="VVU-yy-Hai" secondAttribute="leading" constant="93" id="8FM-VC-uKD"/>
+                            <constraint firstItem="SRP-eD-t5N" firstAttribute="top" secondItem="VVU-yy-Hai" secondAttribute="top" constant="9" id="Aqf-5C-ULs"/>
+                            <constraint firstItem="U8w-Pf-ij3" firstAttribute="trailing" secondItem="r9k-id-GX6" secondAttribute="trailing" id="RDD-2d-91o"/>
+                            <constraint firstItem="U8w-Pf-ij3" firstAttribute="leading" secondItem="r9k-id-GX6" secondAttribute="leading" id="YZh-5V-Ifd"/>
+                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerX" secondItem="C0k-0p-Jn4" secondAttribute="centerX" id="ZLJ-Zs-Y7q"/>
+                            <constraint firstItem="r9k-id-GX6" firstAttribute="top" secondItem="qwY-TL-muX" secondAttribute="bottom" constant="31" id="gN1-BQ-3vU"/>
+                            <constraint firstItem="VVU-yy-Hai" firstAttribute="trailing" secondItem="qwY-TL-muX" secondAttribute="trailing" constant="137" id="kVI-TM-xnq"/>
+                            <constraint firstItem="U8w-Pf-ij3" firstAttribute="top" secondItem="SRP-eD-t5N" secondAttribute="bottom" constant="16" id="poP-u3-QRo"/>
+                            <constraint firstAttribute="bottom" secondItem="SRP-eD-t5N" secondAttribute="bottom" constant="241" id="uhj-D5-NWS"/>
+                            <constraint firstItem="U8w-Pf-ij3" firstAttribute="top" secondItem="Gca-h3-jQi" secondAttribute="bottom" constant="10" id="xUI-Hs-ged"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VVU-yy-Hai"/>
                     </view>
+                    <connections>
+                        <outlet property="bedRoomsLabel" destination="r9k-id-GX6" id="Jtx-V7-6Lr"/>
+                        <outlet property="listingPriceLabel" destination="qwY-TL-muX" id="ONU-r3-jTY"/>
+                        <outlet property="photo" destination="K6Q-ya-x7n" id="mfI-ix-DFr"/>
+                        <outlet property="scrollView" destination="SRP-eD-t5N" id="ePr-hu-Cl6"/>
+                        <outlet property="unitDescriptionLabel" destination="U8w-Pf-ij3" id="Alq-Ft-hen"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5s-7o-d7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3169" y="134"/>
+            <point key="canvasLocation" x="3168.8000000000002" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ncE-mg-10Z">
