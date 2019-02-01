@@ -219,17 +219,20 @@
                                     <outlet property="delegate" destination="2Dk-Xu-al2" id="ntH-py-ogl"/>
                                 </connections>
                             </tableView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jPO-oc-Sbk">
-                                <rect key="frame" x="0.0" y="64" width="387" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jPO-oc-Sbk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F9V-Xw-rG4" firstAttribute="leading" secondItem="I57-tQ-oX4" secondAttribute="leading" id="0M4-FK-nDq"/>
+                            <constraint firstItem="jPO-oc-Sbk" firstAttribute="leading" secondItem="I57-tQ-oX4" secondAttribute="leading" id="EIJ-us-7Sy"/>
+                            <constraint firstItem="jPO-oc-Sbk" firstAttribute="top" secondItem="I57-tQ-oX4" secondAttribute="top" id="Uup-Ed-cOe"/>
+                            <constraint firstItem="F9V-Xw-rG4" firstAttribute="top" secondItem="jPO-oc-Sbk" secondAttribute="bottom" id="pBB-jB-R0f"/>
                             <constraint firstItem="F9V-Xw-rG4" firstAttribute="top" secondItem="I57-tQ-oX4" secondAttribute="top" constant="250" id="pU1-Yj-dNT"/>
                             <constraint firstItem="I57-tQ-oX4" firstAttribute="bottom" secondItem="F9V-Xw-rG4" secondAttribute="bottom" id="rKp-MS-FZA"/>
                             <constraint firstItem="I57-tQ-oX4" firstAttribute="trailing" secondItem="F9V-Xw-rG4" secondAttribute="trailing" id="tYU-sY-3Ja"/>
+                            <constraint firstItem="jPO-oc-Sbk" firstAttribute="trailing" secondItem="I57-tQ-oX4" secondAttribute="trailing" id="wky-Bo-54L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I57-tQ-oX4"/>
                     </view>
@@ -249,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sly-vI-hxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="134"/>
+            <point key="canvasLocation" x="1976.8" y="133.5832083958021"/>
         </scene>
         <!--Insta view-->
         <scene sceneID="TEZ-5S-sMR">
@@ -335,9 +338,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bluefloors" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-UY-RP2">
-                                <rect key="frame" x="-585" y="387" width="960" height="640"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluefloors" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-UY-RP2">
+                                <rect key="frame" x="0.0" y="387" width="375" height="280"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-Pf-ij3">
                                 <rect key="frame" x="142.5" y="392" width="90.5" height="150"/>
@@ -363,6 +365,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6Q-ya-x7n">
                                 <rect key="frame" x="0.0" y="172" width="375" height="323"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-eD-t5N">
+                                <rect key="frame" x="0.0" y="64" width="375" height="323"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eqF-xa-VGD" id="Uam-If-K4s"/>
+                                </connections>
+                            </scrollView>
                             <pageControl contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gca-h3-jQi">
                                 <rect key="frame" x="141.5" y="315" width="92" height="37"/>
                                 <constraints>
@@ -372,34 +380,32 @@
                                     <action selector="pageChanged:" destination="eqF-xa-VGD" eventType="valueChanged" id="21h-vc-Nvu"/>
                                 </connections>
                             </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRP-eD-t5N">
-                                <rect key="frame" x="0.0" y="64" width="375" height="323"/>
-                                <connections>
-                                    <outlet property="delegate" destination="eqF-xa-VGD" id="Uam-If-K4s"/>
-                                </connections>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qwY-TL-muX" firstAttribute="top" secondItem="U8w-Pf-ij3" secondAttribute="bottom" constant="5" id="09k-tu-1Rp"/>
                             <constraint firstItem="r9k-id-GX6" firstAttribute="top" secondItem="qwY-TL-muX" secondAttribute="bottom" constant="29" id="1vk-GG-aPO"/>
+                            <constraint firstItem="qwY-TL-muX" firstAttribute="top" secondItem="K6Q-ya-x7n" secondAttribute="bottom" constant="52" id="4ZL-iJ-EAF"/>
                             <constraint firstItem="VVU-yy-Hai" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qwY-TL-muX" secondAttribute="trailing" id="4cc-RO-f83"/>
-                            <constraint firstItem="SRP-eD-t5N" firstAttribute="top" secondItem="VVU-yy-Hai" secondAttribute="top" id="5eU-8l-QUF"/>
-                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerY" secondItem="K6Q-ya-x7n" secondAttribute="centerY" id="6zh-BQ-pLa"/>
+                            <constraint firstItem="K6Q-ya-x7n" firstAttribute="leading" secondItem="VVU-yy-Hai" secondAttribute="leading" id="4pe-rX-XKc"/>
                             <constraint firstAttribute="bottom" secondItem="SRP-eD-t5N" secondAttribute="bottom" constant="280" id="CU0-xI-tpd"/>
-                            <constraint firstItem="K6Q-ya-x7n" firstAttribute="leading" secondItem="SRP-eD-t5N" secondAttribute="leading" id="FTz-dD-43a"/>
                             <constraint firstItem="qwY-TL-muX" firstAttribute="centerX" secondItem="C0k-0p-Jn4" secondAttribute="centerX" id="HaL-3V-RTz"/>
+                            <constraint firstItem="K6Q-ya-x7n" firstAttribute="trailing" secondItem="VVU-yy-Hai" secondAttribute="trailing" id="Jkz-sE-fJh"/>
                             <constraint firstItem="K6Q-ya-x7n" firstAttribute="top" secondItem="VVU-yy-Hai" secondAttribute="top" constant="108" id="NAc-R0-Ms8"/>
                             <constraint firstItem="U8w-Pf-ij3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VVU-yy-Hai" secondAttribute="leading" id="OZY-Yi-ljj"/>
+                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerY" secondItem="K6Q-ya-x7n" secondAttribute="centerY" id="ZfL-xK-CUp"/>
                             <constraint firstItem="qwY-TL-muX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VVU-yy-Hai" secondAttribute="leading" id="ZsQ-GZ-7pD"/>
-                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerY" secondItem="C0k-0p-Jn4" secondAttribute="centerY" id="b0S-6p-Ugg"/>
+                            <constraint firstItem="SRP-eD-t5N" firstAttribute="top" secondItem="VVU-yy-Hai" secondAttribute="top" id="axg-up-8Kf"/>
+                            <constraint firstItem="0Dz-UY-RP2" firstAttribute="top" secondItem="SRP-eD-t5N" secondAttribute="bottom" id="h7s-QU-HRM"/>
                             <constraint firstItem="VVU-yy-Hai" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U8w-Pf-ij3" secondAttribute="trailing" id="heU-vV-XQM"/>
                             <constraint firstItem="SRP-eD-t5N" firstAttribute="trailing" secondItem="VVU-yy-Hai" secondAttribute="trailing" id="hvF-CQ-Kmp"/>
-                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerX" secondItem="qwY-TL-muX" secondAttribute="centerX" id="iv1-ep-MqR"/>
+                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerX" secondItem="r9k-id-GX6" secondAttribute="centerX" id="iEo-fK-B7t"/>
+                            <constraint firstItem="0Dz-UY-RP2" firstAttribute="bottom" secondItem="VVU-yy-Hai" secondAttribute="bottom" id="jau-d6-ZP1"/>
                             <constraint firstItem="U8w-Pf-ij3" firstAttribute="top" secondItem="SRP-eD-t5N" secondAttribute="bottom" constant="5" id="jcj-x5-hg3"/>
-                            <constraint firstItem="Gca-h3-jQi" firstAttribute="centerX" secondItem="K6Q-ya-x7n" secondAttribute="centerX" id="lGP-cT-u5X"/>
                             <constraint firstItem="SRP-eD-t5N" firstAttribute="leading" secondItem="VVU-yy-Hai" secondAttribute="leading" id="oA7-IF-3Au"/>
                             <constraint firstItem="r9k-id-GX6" firstAttribute="centerX" secondItem="C0k-0p-Jn4" secondAttribute="centerX" id="p0E-qN-fmQ"/>
+                            <constraint firstItem="0Dz-UY-RP2" firstAttribute="trailing" secondItem="VVU-yy-Hai" secondAttribute="trailing" id="pde-Ru-1VS"/>
+                            <constraint firstItem="0Dz-UY-RP2" firstAttribute="leading" secondItem="VVU-yy-Hai" secondAttribute="leading" id="pmz-bT-oZL"/>
                             <constraint firstItem="U8w-Pf-ij3" firstAttribute="centerX" secondItem="C0k-0p-Jn4" secondAttribute="centerX" id="xrs-v9-aHX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VVU-yy-Hai"/>
@@ -441,10 +447,6 @@
         <image name="iconInstaHomey" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-
         <segue reference="InD-ke-D6d"/>
-
-        <segue reference="EIl-xg-eM5"/>
-
     </inferredMetricsTieBreakers>
 </document>
