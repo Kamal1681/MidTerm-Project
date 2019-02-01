@@ -69,12 +69,12 @@
     for (UIImageView *imageView in self.imageViewArray) {
         [self.scrollView addSubview:imageView];
         
-        CGRect imageFrame = CGRectMake(imageView.frame.origin.x + xOffset,
+       CGRect imageFrame = CGRectMake(imageView.frame.origin.x + xOffset,
                                        imageView.frame.origin.y,
                                        (self.scrollView.contentSize.width / self.unitObject.photos.count),
-                                       imageView.frame.size.height);
-        [imageView setFrame:(imageFrame)];
-        
+                                      imageView.frame.size.height);
+       [imageView setFrame:(imageFrame)];
+
         xOffset += CGRectGetWidth(imageView.frame);
     }
 }
@@ -91,7 +91,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    
+   
     int currentPage = scrollView.contentOffset.x / (self.scrollView.contentSize.width / self.unitObject.photos.count);
     
     self.pageControl.currentPage = currentPage;

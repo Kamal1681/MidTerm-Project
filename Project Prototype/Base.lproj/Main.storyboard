@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gLk-JR-VLO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gLk-JR-VLO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -224,11 +224,9 @@
                         <viewLayoutGuide key="safeArea" id="I57-tQ-oX4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map view" id="c92-in-ZAe">
-
                         <barButtonItem key="rightBarButtonItem" title="Item" image="iconInstaHomey" id="kxk-Vw-SMX">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-34" maxY="-3"/>
                             <inset key="largeContentSizeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
-
                             <connections>
                                 <segue destination="Lun-ft-h1e" kind="show" identifier="instaViewSegue" id="737-Q4-98E"/>
                             </connections>
@@ -391,6 +389,7 @@
                     <connections>
                         <outlet property="bedRoomsLabel" destination="r9k-id-GX6" id="Jtx-V7-6Lr"/>
                         <outlet property="listingPriceLabel" destination="qwY-TL-muX" id="ONU-r3-jTY"/>
+                        <outlet property="pageControl" destination="Gca-h3-jQi" id="W6O-aD-pTx"/>
                         <outlet property="photo" destination="K6Q-ya-x7n" id="mfI-ix-DFr"/>
                         <outlet property="scrollView" destination="SRP-eD-t5N" id="ePr-hu-Cl6"/>
                         <outlet property="unitDescriptionLabel" destination="U8w-Pf-ij3" id="Alq-Ft-hen"/>
@@ -419,12 +418,10 @@
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
-
     <resources>
-        <image name="iconInstaHomey" width="100" height="100"/>
+        <image name="iconInstaHomey" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="InD-ke-D6d"/>
-
     </inferredMetricsTieBreakers>
 </document>
