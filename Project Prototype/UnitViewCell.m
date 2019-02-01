@@ -2,8 +2,8 @@
 //  UnitViewCell.m
 //  Project Prototype
 //
-//  Created by Kamal Maged on 2019-01-29.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import "UnitViewCell.h"
@@ -47,6 +47,7 @@
     
     //Set Photos in cell
     self.listingImageView.image = unit.photo;
+    
 
     self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.price];
     NSLog(@"Price is %@", unit.price);
@@ -56,10 +57,10 @@
     NSNumberFormatter *indCurrencyFormatter = [[NSNumberFormatter alloc] init];
     [indCurrencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [indCurrencyFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    NSString *formattedString =  [indCurrencyFormatter stringFromNumber: unit.price];
+    NSString *formattedString =  [indCurrencyFormatter stringFromNumber: unit.listingPrice];
     formattedString = [formattedString substringToIndex:[formattedString length]-3]; // cut .00 from the string
     self.listingPriceLabel.text = [NSString stringWithFormat:@"%@", formattedString];
-    NSLog(@"Price is %@", unit.price);
+    NSLog(@"Price is %@", unit.listingPrice);
     
     // Set number of bedrooms in cell
     self.listingNumberOfBedrooms.text = [NSString stringWithFormat:@"%lu", unit.numberOfRooms];
