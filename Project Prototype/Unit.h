@@ -2,16 +2,17 @@
 //  Unit.h
 //  Project Prototype
 //
-//  Created by Kamal Maged on 2019-01-29.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Unit : NSObject
+@interface Unit : NSObject<MKAnnotation>
 @property (strong, nonatomic) NSString * city;//address.city
 @property (strong, nonatomic) NSArray * photos;
 @property (strong, nonatomic) UIImage * photo; // photo, that appears in the cell
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString * address; //address.full
 @property (strong, nonatomic) NSString * additionalFeatures; // additionalRooms
 @property (strong, nonatomic) NSString * exteriorFeatures; // exteriorFeatures
+
 
 + (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary;
 @end

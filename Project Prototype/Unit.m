@@ -2,8 +2,8 @@
 //  Unit.m
 //  Project Prototype
 //
-//  Created by Kamal Maged on 2019-01-29.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import "Unit.h"
@@ -19,8 +19,8 @@
     unit.price = dictionary[@"listPrice"];
     unit.unitDescription = dictionary[@"remarks"];
     unit.area = [dictionary[@"property"][@"area"]integerValue];
-    unit.latitude = dictionary[@"geo"][@"latitude"];
-    unit.longitude = dictionary[@"geo"][@"longitude"];
+    unit.latitude = dictionary[@"geo"][@"lat"];
+    unit.longitude = dictionary[@"geo"][@"lng"];
     unit.address = dictionary[@"address"][@"full"];
     unit.additionalFeatures = dictionary[@"additinalRooms"];
     unit.exteriorFeatures = dictionary[@"exteriorFeatures"];
@@ -50,4 +50,17 @@
     
     return unit;
 }
+
+- (CLLocationCoordinate2D) coordinate {
+    return CLLocationCoordinate2DMake(self.latitude.doubleValue, self.longitude.doubleValue);
+}
+
+- (NSString *)title {
+    return self.address;
+}
+
+-(NSString*)subtitle {
+    return self.city;
+}
+
 @end

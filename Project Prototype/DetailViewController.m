@@ -2,8 +2,8 @@
 //  DetailViewController.m
 //  Project Prototype
 //
-//  Created by Kamal Maged on 2019-01-29.
-//  Copyright © 2019 Kamal Maged. All rights reserved.
+//  Created by Kamal Maged, Van Luu, Paul Uvarov on 2019-01-29.
+//  Copyright © 2019 Kamal Maged, Van Luu, Paul Uvarov. All rights reserved.
 //
 
 #import "DetailViewController.h"
@@ -22,6 +22,7 @@
 
     self.cityLabel.text = self.unitObject.city;
     self.unitDescriptionLabel.text = self.unitObject.unitDescription;
+
     
     NSNumberFormatter *indCurrencyFormatter = [[NSNumberFormatter alloc] init];
     [indCurrencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -32,6 +33,9 @@
     NSLog(@"Price is %@", self.unitObject.price);
     
     
+
+    self.listingPriceLabel.text = [NSString stringWithFormat:@"%@", self.unitObject.price];
+
     self.bedRoomsLabel.text = [NSString stringWithFormat:@"%lu", self.unitObject.numberOfRooms];
     self.areaLabel.text = [NSString stringWithFormat:@"%lu", self.unitObject.area];
     self.additionalFeaturesLabel.text = self.unitObject.additionalFeatures;
