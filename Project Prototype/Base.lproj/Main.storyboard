@@ -299,7 +299,7 @@
                                         <connections>
                                             <outlet property="photo" destination="jlY-w7-boH" id="g0E-Zz-xKp"/>
                                             <outlet property="priceLabel" destination="ACq-uI-2X2" id="enN-6e-bSA"/>
-                                            <segue destination="eqF-xa-VGD" kind="show" id="EIl-xg-eM5"/>
+                                            <segue destination="eqF-xa-VGD" kind="show" identifier="Detail View" id="EIl-xg-eM5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -441,6 +441,10 @@
         <image name="iconInstaHomey" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
+
         <segue reference="InD-ke-D6d"/>
+
+        <segue reference="EIl-xg-eM5"/>
+
     </inferredMetricsTieBreakers>
 </document>
