@@ -108,6 +108,7 @@
                                                                                           error:&jsonError];
                                         
                                         
+
                                         if (self.searchIndex == 0) {
                                             NSMutableArray * units = [NSMutableArray new];
 
@@ -120,6 +121,7 @@
                                             [self.unitArray addObjectsFromArray:units];
                                         }
                                                                               
+
                                         [self loadAnnotations];
                                         
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{

@@ -30,10 +30,10 @@
     NSString *formattedString =  [indCurrencyFormatter stringFromNumber: self.unitObject.price];
     formattedString = [formattedString substringToIndex:[formattedString length]-3]; // cut .00 from the string
     self.listingPriceLabel.text = [NSString stringWithFormat:@"%@", formattedString];
-//    NSLog(@"Price is %@", self.unitObject.price);
+
     
-    self.bedRoomsLabel.text = [NSString stringWithFormat:@"Number of bedrooms: %lu", self.unitObject.numberOfRooms];
-    self.areaLabel.text = [NSString stringWithFormat:@"%lu", self.unitObject.area];
+    self.bedRoomsLabel.text = [NSString stringWithFormat:@"Bedrooms: %lu", self.unitObject.numberOfRooms];
+    self.areaLabel.text = [NSString stringWithFormat:@"Surface Area: %lu", self.unitObject.area];
     self.additionalFeaturesLabel.text = self.unitObject.additionalFeatures;
     self.exteriorFeaturesLabel.text = self.unitObject.exteriorFeatures;
     self.photosArray = [[NSMutableArray alloc]initWithCapacity:self.unitObject.photos.count];

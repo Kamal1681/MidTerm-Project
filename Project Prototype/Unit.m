@@ -27,11 +27,15 @@
     unit.latitude = dictionary[@"geo"][@"lat"];
     unit.longitude = dictionary[@"geo"][@"lng"];
     unit.address = dictionary[@"address"][@"full"];
-    unit.additionalFeatures = dictionary[@"additinalRooms"];
-    unit.exteriorFeatures = dictionary[@"exteriorFeatures"];
+    unit.additionalFeatures = dictionary[@"property"][@"additionalRooms"];
+    unit.exteriorFeatures = dictionary[@"property"][@"exteriorFeatures"];
     
     
     
+
+
+    
+
     unit.imageUrl = [NSURL URLWithString:dictionary[@"photos"][0]];
 //    if (!imageUrl) {
 //        NSLog(@"URL is nil");
@@ -42,6 +46,7 @@
 //    //   Blocks processing on the thread this runs on (VERY SLOW)
 //    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
 //    unit.photo = [UIImage imageWithData:imageData];
+
     
     return unit;
 }
