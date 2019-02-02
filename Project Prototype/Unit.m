@@ -22,8 +22,8 @@
     unit.latitude = dictionary[@"geo"][@"lat"];
     unit.longitude = dictionary[@"geo"][@"lng"];
     unit.address = dictionary[@"address"][@"full"];
-    unit.additionalFeatures = dictionary[@"additinalRooms"];
-    unit.exteriorFeatures = dictionary[@"exteriorFeatures"];
+    unit.additionalFeatures = dictionary[@"property"][@"additionalRooms"];
+    unit.exteriorFeatures = dictionary[@"property"][@"exteriorFeatures"];
     
     
     
@@ -40,6 +40,7 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:imageUrl];
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
         UIImage *image = [UIImage imageWithData:data];
         
         unit.photo = image;

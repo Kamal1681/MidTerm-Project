@@ -38,7 +38,7 @@
     
     self.pricesArray = @[].mutableCopy;
     
-    for (int i = 1; i < 50; i++) {
+    for (int i = 1; i < 200; i++) {
         int price = i * 100000;
         NSString *strPrice = [NSString stringWithFormat:@"%d", price];
         [self.pricesArray addObject:strPrice];

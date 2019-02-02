@@ -103,14 +103,14 @@
                                         
                                         
                                         
-//                                        NSMutableArray * units = [NSMutableArray new];
+                                       // NSMutableArray * units = [NSMutableArray new];
                                         [self.unitArray removeAllObjects];
                                         for (NSMutableDictionary * unitDictionary in json) {
                                             Unit * unitSample = [Unit fromJsonDictionary:unitDictionary];
                                             [self.unitArray addObject:unitSample];
                                         }
                                         
-//                                        self.unitArray = units;
+                                        //self.unitArray = units;
                                         
                                         [self loadAnnotations];
                                         
