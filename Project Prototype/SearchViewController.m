@@ -50,12 +50,12 @@
     [self.mapView registerClass:[MKMarkerAnnotationView class] forAnnotationViewWithReuseIdentifier:@"myAnnotation"];
     //setting out current location
     MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
-    myAnnotation.coordinate = CLLocationCoordinate2DMake(29.9228365, -95.4722851);
+    myAnnotation.coordinate = CLLocationCoordinate2DMake(29.8172168, -95.4269363);
     [myAnnotation setTitle:@"Your Current Location"];
     [myAnnotation setSubtitle:@"Where we currently are"];
     [self.mapView addAnnotation: myAnnotation];
-    CLLocationCoordinate2D zoomToLocation = CLLocationCoordinate2DMake(29.9228365, -95.4722851);
-    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMakeWithDistance(zoomToLocation, 500, 500);
+    CLLocationCoordinate2D zoomToLocation = CLLocationCoordinate2DMake(29.8172168, -95.4269363);
+    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMakeWithDistance(zoomToLocation, 25000, 25000);
     [self.mapView setRegion:adjustedRegion];
     
     
