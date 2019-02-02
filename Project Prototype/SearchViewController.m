@@ -25,6 +25,7 @@
 @property (strong, nonatomic) Unit *myUnit;
 
 
+
 @end
 
 @implementation SearchViewController
@@ -74,6 +75,11 @@
     
 }
 - (void)viewDidAppear:(BOOL)animated {
+    
+//    int i = 0;
+//
+//    if (i == 0) {
+    
     //Parsing Json File
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", @"simplyrets", @"simplyrets"];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -102,16 +108,20 @@
                                                                                           error:&jsonError];
                                         
                                         
-                                        
-                                       // NSMutableArray * units = [NSMutableArray new];
-                                        [self.unitArray removeAllObjects];
-                                        for (NSMutableDictionary * unitDictionary in json) {
-                                            Unit * unitSample = [Unit fromJsonDictionary:unitDictionary];
-                                            [self.unitArray addObject:unitSample];
+
+                                        if (self.searchIndex == 0) {
+                                            NSMutableArray * units = [NSMutableArray new];
+
+                                            for (NSMutableDictionary * unitDictionary in json) {
+                                                Unit * unitSample = [Unit fromJsonDictionary:unitDictionary];
+                                                [units addObject:unitSample];
+                                            }
+                                            self.searchIndex = 1;
+                                            [self.unitArray removeAllObjects];
+                                            [self.unitArray addObjectsFromArray:units];
                                         }
-                                        
-                                        //self.unitArray = units;
-                                        
+                                                                              
+
                                         [self loadAnnotations];
                                         
                                         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -123,6 +133,10 @@
                                     }];
     
     [task resume];
+        
+//        i += 1;
+//
+//    }
 }
 
 - (void)loadAnnotations {

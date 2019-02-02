@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Unit : NSObject<MKAnnotation>
 @property (strong, nonatomic) NSString * city;//address.city
 @property (strong, nonatomic) NSArray * photos;
-@property (strong, nonatomic) UIImage * photo; // photo, that appears in the cell
 @property (nonatomic) NSUInteger  numberOfRooms; //property.bedrooms
 @property (strong, nonatomic) NSNumber * price;//listprice
 @property (strong, nonatomic) NSString * unitDescription; //remarks?
@@ -28,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary;
+- (void)loadImage:(void (^)(UIImage* photo))complete;
+
 @end
 
 NS_ASSUME_NONNULL_END

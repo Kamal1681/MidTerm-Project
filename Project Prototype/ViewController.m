@@ -38,7 +38,9 @@
     
     self.pricesArray = @[].mutableCopy;
     
-    for (int i = 1; i < 200; i++) {
+
+    for (int i = 1; i < 150; i++) {
+
         int price = i * 100000;
         NSString *strPrice = [NSString stringWithFormat:@"%d", price];
         [self.pricesArray addObject:strPrice];
@@ -98,6 +100,8 @@
         } else {
             dvc.searchQuery = [NSString stringWithFormat: @"https://api.simplyrets.com/properties?limit=500&lastId=0&minprice=%@&maxprice=%@&minbeds=%@&cities=%@&count=true", self.pickedMinPrice, self.pickedMaxPrice, self.pickedrooms, [self.pickedCity stringByReplacingOccurrencesOfString:@" " withString:@"%20"]];
         }
+        
+        dvc.searchIndex = 0;
     }
     
 }
