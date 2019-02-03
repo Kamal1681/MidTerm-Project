@@ -7,7 +7,7 @@
 //
 
 #import "DetailViewController.h"
-
+#import "AgentViewController.h"
 @interface DetailViewController () <UIScrollViewDelegate>
 
 @end
@@ -68,7 +68,7 @@
         CGRect imageFrame = CGRectMake(imageView.frame.origin.x + xOffset,
                                        imageView.frame.origin.y,
                                        (self.scrollView.contentSize.width / self.unitObject.photos.count),
-                                       imageView.frame.size.height);
+                                       self.scrollView.contentSize.height);
         [imageView setFrame:(imageFrame)];
         
         xOffset += CGRectGetWidth(imageView.frame);
@@ -92,6 +92,18 @@
     
     self.pageControl.currentPage = currentPage;
 }
+- (IBAction)showContactDetails:(id)sender {
+    AgentViewController * agentViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"agentViewController"];
+
+    agentViewController.view.frame = self.view.frame;
+    agentViewController.unitObject = self.unitObject;
+
+    [self.view addSubview:agentViewController.view];
+
+    [agentViewController didMoveToParentViewController:self];
+
+}
+
 
 /*
 #pragma mark - Navigation

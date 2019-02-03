@@ -29,6 +29,9 @@
     unit.address = dictionary[@"address"][@"full"];
     unit.additionalFeatures = dictionary[@"property"][@"additionalRooms"];
     unit.exteriorFeatures = dictionary[@"property"][@"exteriorFeatures"];
+    unit.agentName = [[dictionary[@"agent"][@"firstName"] stringByAppendingString:@" "] stringByAppendingString:dictionary[@"agent"][@"lastName"]];
+    unit.agentID = dictionary[@"agent"][@"id"];
+    unit.agentContact = dictionary[@"agent"][@"contact"];
     
     
     

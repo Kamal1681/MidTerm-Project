@@ -22,7 +22,7 @@
     [super awakeFromNib];
     // Initialization code
     
-//    [self addObserver:self forKeyPath:@"self.unit.photo" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
+
     
 }
 
@@ -32,17 +32,6 @@
     // Configure the view for the selected state
 }
 
-- (void)dealloc {
-//    [self removeObserver:self forKeyPath:@"self.unit.photo"];
-}
-
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-//    if ([keyPath isEqualToString:@"self.unit.photo"]) {
-//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//            self.listingImageView.image = self.unit.photo;
-//        }];
-//    }
-//}
 
 - (void)setUnit:(Unit *) unit {
     _unit = unit;
@@ -53,7 +42,7 @@
             self.listingImageView.image = photo;
         }
     }];
-//    self.listingImageView.image = unit.photo;
+
     
 
     self.listingPriceLabel.text = [NSString stringWithFormat:@"Price is %@", unit.price];

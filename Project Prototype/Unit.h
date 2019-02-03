@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString * address; //address.full
 @property (strong, nonatomic) NSString * additionalFeatures; // additionalRooms
 @property (strong, nonatomic) NSString * exteriorFeatures; // exteriorFeatures
+@property (strong, nonatomic) NSString * agentName;
+@property (nonatomic) NSString * agentContact;
+@property (strong, nonatomic) NSString * agentID;
 
 
 + (Unit *)fromJsonDictionary:(NSMutableDictionary *)dictionary;
