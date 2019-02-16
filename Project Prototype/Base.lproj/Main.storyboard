@@ -410,7 +410,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="showContactDetails:" destination="eqF-xa-VGD" eventType="touchUpInside" id="XTr-Jo-w2w"/>
+                                    <action selector="showContactDetails:" destination="eqF-xa-VGD" eventType="touchUpInside" id="K9o-2p-e1g"/>
+                                    <segue destination="V5p-Vf-Pkz" kind="presentation" identifier="agentPopUp" id="3UH-VB-qhP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -511,6 +512,21 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgv-KV-S08">
+                                        <rect key="frame" x="294" y="23" width="63" height="30"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Button">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="close:" destination="V5p-Vf-Pkz" eventType="touchUpInside" id="Fgi-NS-Bcb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cyan="0.38480610594357528" magenta="0.082379448699624575" yellow="0.013702678047630885" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <gestureRecognizers/>
@@ -518,8 +534,12 @@
                                     <constraint firstItem="6bs-0n-ZnM" firstAttribute="centerX" secondItem="oaf-Es-YkS" secondAttribute="centerX" id="70J-jB-Hi9"/>
                                     <constraint firstItem="lTb-Lk-7gD" firstAttribute="centerX" secondItem="6bs-0n-ZnM" secondAttribute="centerX" id="FPK-LH-DQc"/>
                                     <constraint firstAttribute="trailing" secondItem="lTb-Lk-7gD" secondAttribute="trailing" constant="141" id="Gv2-QW-Nhv"/>
+                                    <constraint firstItem="bgv-KV-S08" firstAttribute="leading" secondItem="6bs-0n-ZnM" secondAttribute="trailing" constant="57" id="Hmr-I3-ye0"/>
+                                    <constraint firstAttribute="bottom" secondItem="bgv-KV-S08" secondAttribute="bottom" constant="112" id="MOg-Cs-wae"/>
                                     <constraint firstAttribute="bottom" secondItem="lTb-Lk-7gD" secondAttribute="bottom" constant="35" id="cD7-nk-AMu"/>
+                                    <constraint firstItem="bgv-KV-S08" firstAttribute="top" secondItem="oaf-Es-YkS" secondAttribute="top" constant="23" id="cUQ-W2-Uah"/>
                                     <constraint firstItem="lTb-Lk-7gD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oaf-Es-YkS" secondAttribute="leading" constant="20" symbolic="YES" id="goi-t7-j7s"/>
+                                    <constraint firstAttribute="trailing" secondItem="bgv-KV-S08" secondAttribute="trailing" constant="18" id="kDf-5F-EKt"/>
                                     <constraint firstAttribute="width" constant="375" id="lLb-h3-e5f"/>
                                     <constraint firstAttribute="height" constant="165" id="n8d-1v-fgx"/>
                                     <constraint firstItem="w55-de-cp5" firstAttribute="centerX" secondItem="6bs-0n-ZnM" secondAttribute="centerX" id="rb1-qe-Z70"/>

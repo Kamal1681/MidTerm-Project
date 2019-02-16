@@ -25,10 +25,11 @@
 
     
 }
+
+
 - (void)didMoveToParentViewController:(UIViewController *)parent {
     
     [super didMoveToParentViewController:parent];
-    
     self.agentName.text = self.unitObject.agentName;
     self.agentID.text = [@"ID: " stringByAppendingString:self.unitObject.agentID];
     self.agentContact.text = @"647-1234567";
