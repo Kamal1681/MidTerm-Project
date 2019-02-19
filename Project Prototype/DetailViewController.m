@@ -93,21 +93,18 @@
     
     self.pageControl.currentPage = currentPage;
 }
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AgentViewController * agentViewController = segue.destinationViewController;
-    agentViewController.view.frame = self.view.frame;
-    agentViewController.unitObject = self.unitObject;
     
-    [self.view addSubview:agentViewController.view];
-    [agentViewController didMoveToParentViewController:self];
-}
+
+
 - (IBAction)showContactDetails:(id)sender {
     AgentViewController * agentViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"agentViewController"];
-    UIStoryboardSegue * segue = [[UIStoryboardSegue alloc]initWithIdentifier:@"agentPopUp" source:sender destination:agentViewController];
-    [self prepareForSegue:segue sender:self];
+    agentViewController.unitObject = self.unitObject;
+    [self addChildViewController:agentViewController];
+    [self.view addSubview:agentViewController.view];
+
+    [agentViewController didMoveToParentViewController:self];
     
+
    
 }
 

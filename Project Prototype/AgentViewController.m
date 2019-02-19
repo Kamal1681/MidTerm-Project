@@ -38,6 +38,10 @@
 
 - (IBAction)close:(id)sender {
     [self.view removeFromSuperview];
+    [self removeFromParentViewController];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//
+//    }];
 }
 
 
